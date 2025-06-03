@@ -1,0 +1,34 @@
+version: 0.0.1
+type: plugin
+author: ron-zhouhui-hjlarry
+name: small_pay
+label:
+  en_US: Small Pay
+  zh_Hans: 小支付
+description:
+  en_US: 个人开发者的工作对话流微信收款服务
+  ja_JP: 个人开发者的工作对话流微信收款服务
+  zh_Hans: 个人开发者的工作对话流微信收款服务
+  pt_BR: 个人开发者的工作对话流微信收款服务
+icon: icon.svg
+resource:
+  memory: 268435456
+  permission:
+    storage:
+      enabled: true
+      size: 1048576
+plugins:
+  tools:
+    - provider/small_pay.yaml
+meta:
+  version: 0.0.1
+  arch:
+    - amd64
+    - arm64
+  runner:
+    language: python
+    version: "3.12"
+    entrypoint: main
+created_at: 2025-06-03T09:00:41.890123463+08:00
+privacy: PRIVACY.md
+verified: false
