@@ -51,6 +51,8 @@ class CreateOrderTool(Tool):
         order_no = response.get("data").get("orderNo")
         if self.session.conversation_id:
             self.session.storage.set(self.session.conversation_id, order_no.encode("utf-8"))
+            valid_times = tool_parameters.get("valid_times")
+            self.session.storage.set(f"{self.session.conversation_id}_valid_times", valid_times.to_bytes(4, byteorder='big', signed=False))
         yield self.create_text_message(order_no)
 
         b64 = response.get("data").get("qrCodeBase64")
