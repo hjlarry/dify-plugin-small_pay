@@ -1,6 +1,6 @@
 identity:
   name: create_order
-  author: ron-zhouhui-hjlarry
+  author: hjlarry
   label:
     en_US: Create Order
     zh_Hans: 创建订单

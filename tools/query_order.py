@@ -30,7 +30,7 @@ class QueryOrderTool(Tool):
             yield self.create_text_message("订单号不存在")
             return
         
-        url = "https://freecicoda.com/smallPayment/api/v1/order/queryOrder"
+        url = "https://pay.freecicoda.com/smallPayment/api/v1/order/queryOrder"
         payload = {
             "apiKey": self.runtime.credentials.get("api_key"),
             "orderNo": order_no

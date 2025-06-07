@@ -1,15 +1,13 @@
 version: 0.0.1
 type: plugin
-author: ron-zhouhui-hjlarry
+author: hjlarry
 name: small_pay
 label:
   en_US: Small Pay
   zh_Hans: 小支付
 description:
-  en_US: 个人开发者的工作对话流微信收款服务
-  ja_JP: 个人开发者的工作对话流微信收款服务
+  en_US: Personal Developer's Workflow WeChat Payment Service
   zh_Hans: 个人开发者的工作对话流微信收款服务
-  pt_BR: 个人开发者的工作对话流微信收款服务
 icon: icon.svg
 resource:
   memory: 268435456

@@ -35,7 +35,7 @@ class CreateOrderTool(Tool):
         if len(desc) > 200:
             raise ValueError(f"订单描述长度 {len(desc)}， 超过200个字符")
         
-        url = "https://freecicoda.com/smallPayment/api/v1/order/createOrder"
+        url = "https://pay.freecicoda.com/smallPayment/api/v1/order/createOrder"
         payload = {
             "apiKey": self.runtime.credentials.get("api_key"),
             "title": title,

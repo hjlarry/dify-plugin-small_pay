@@ -7,7 +7,7 @@ from dify_plugin.errors.tool import ToolProviderCredentialValidationError
 
 class SmallPayProvider(ToolProvider):
     def _validate_credentials(self, credentials: dict[str, Any]) -> None:
-        url = "https://freecicoda.com/smallPayment/api/v1/order/createOrder"
+        url = "https://pay.freecicoda.com/smallPayment/api/v1/order/createOrder"
 
         payload = {
             "apiKey": credentials.get("api_key"),

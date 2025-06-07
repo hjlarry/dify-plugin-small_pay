@@ -1,5 +1,5 @@
 identity:
-  author: ron-zhouhui-hjlarry
+  author: hjlarry
   name: small_pay
   label:
     en_US: Small Pay
@@ -8,7 +8,6 @@ identity:
   description:
     en_US: For personal developers to receive payments via WeChat
     zh_Hans: 个人开发者的工作对话流微信收款服务
-    pt_BR: Para desenvolvedores pessoais receberem pagamentos via WeChat
   icon: icon.svg
 tools:
   - tools/create_order.yaml
@@ -26,3 +25,4 @@ credentials_for_provider:
       zh_Hans: API Key
     required: true
     type: secret-input
+    url: https://pay.freecicoda.com/api
