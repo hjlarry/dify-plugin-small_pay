@@ -42,18 +42,6 @@ parameters:
       en_US:  The order's description
       zh_Hans: 订单的详细信息描述
     form: form
-  - name: valid_times
-    type: number
-    required: true
-    min: 1
-    max: 9999
-    label:
-      en_US: Order Valid Times
-      zh_Hans: 订单余量
-    human_description:
-      en_US:  Each time the payment is successful, how many times can the conversation flow be used
-      zh_Hans: 每次支付后，用户可以使用多少次对话流
-    form: form
 extra:
   python:
     source: tools/create_order.py

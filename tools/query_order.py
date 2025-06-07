@@ -27,8 +27,7 @@ class QueryOrderTool(Tool):
         if not order_no and self.session.storage.exist(self.session.conversation_id):
             order_no = self.session.storage.get(self.session.conversation_id).decode("utf-8")
         if not order_no:
-            yield self.create_text_message("订单号不存在")
-            return
+            raise ValueError("未获取到订单号")
         
         url = "https://pay.freecicoda.com/smallPayment/api/v1/order/queryOrder"
         payload = {
@@ -42,24 +41,16 @@ class QueryOrderTool(Tool):
             raise ValueError(response.get("message"))
         
         status = response.get("data").get("status")
-        if status == 1:
-            if self.session.storage.exist(f"{self.session.conversation_id}_valid_times"):
-                valid_times = int.from_bytes(self.session.storage.get(f"{self.session.conversation_id}_valid_times"), byteorder='big', signed=False)
-                valid_times = valid_times - 1
-                if valid_times <= 0:
-                    self.session.storage.delete(f"{self.session.conversation_id}_valid_times")
-                else:
-                    self.session.storage.set(f"{self.session.conversation_id}_valid_times", valid_times.to_bytes(4, byteorder='big', signed=False))
-                response["validTimes"] = valid_times
-            else:
-                yield self.create_text_message("该订单次数用完")
-                return
-
+        count = 0 
+        while status == 0:
+            time.sleep(1)
+            count += 1
+            if count > 120:
+                logger.info(f"订单超时未支付")
+                break
+            response = httpx.get(url, params=payload).json()
+            status = response.get("data").get("status")
         order_status = ORDER_STATUS_MAP.get(status, "未知状态")
         yield self.create_text_message(order_status)
         yield self.create_json_message(response)
-        
-        
-        
-
         
