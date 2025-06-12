@@ -21,7 +21,8 @@ parameters:
     human_description:
       en_US:  The unit is Yuan, between 1 and 200.
       zh_Hans: 以元为单位，1元至200元之间。例如1.25
-    form: form
+    llm_description: the price of the order
+    form: llm
   - name: title
     type: string
     required: true
