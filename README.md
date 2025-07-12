@@ -1,7 +1,7 @@
 ## Small Pay
 
 **Co-Author:** [svcvit](https://github.com/svcvit)、[hjlarry](https://github.com/hjlarry)  
-**Version:** 0.0.2  
+**Version:** 0.0.3  
 **Type:** tool  
 **Repo&Issues:** [https://github.com/hjlarry/dify-plugin-small_pay](https://github.com/hjlarry/dify-plugin-small_pay)
 

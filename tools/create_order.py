@@ -32,7 +32,7 @@ class CreateOrderTool(Tool):
         if len(title) > 100:
             raise ValueError(f"订单标题长度 {len(title)}， 超过100个字符")
         desc = tool_parameters.get("desc")
-        if len(desc) > 200:
+        if desc and len(desc) > 200:
             raise ValueError(f"订单描述长度 {len(desc)}， 超过200个字符")
         
         url = "https://pay.freecicoda.com/smallPayment/api/v1/order/createOrder"
